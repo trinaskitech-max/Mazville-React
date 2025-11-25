@@ -14,10 +14,10 @@ export default {
         'gray': '#ede9e4',
       },
       fontFamily: {
-        'sans': ['interstate', 'sans-serif'],
+        'sans': ['Montserrat', 'sans-serif'],
         'serif': ['Spectral', 'serif'],
-        'headings': ['Nicola', 'serif'],
-        'mono': ['Pitch', 'monospace'],
+        'headings': ['Playfair Display', 'serif'],
+        'mono': ['ui-monospace', 'monospace'],
       },
       fontSize: {
         'fluid-xl': 'clamp(1.875rem, 2.5vw + 1rem, 3rem)',
