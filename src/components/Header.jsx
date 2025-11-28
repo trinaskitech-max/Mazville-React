@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,13 +9,13 @@ const Header = () => {
       <header className={`banner fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out border-b-2 backdrop-blur-sm ${isMenuOpen ? 'menu-open bg-navy/95 border-navy-dark' : 'bg-white/95 border-navy-dark/0'}`}>
         <div className="flex items-center justify-between px-fluid-sm py-4 lg:py-6">
           {/* Logo */}
-          <a href="/" className="logo z-50 transition-transform duration-500 ease-out hover:scale-105">
+          <Link to="/" className="logo z-50 transition-transform duration-500 ease-out hover:scale-105">
             <img 
               src="/images/Mazvilla_pics/mazvilla_logo.jpeg" 
               alt="Mazville Medhaya Logo" 
               className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-all duration-500"
             />
-          </a>
+          </Link>
 
           {/* Center Text */}
           <div className="absolute left-1/2 transform -translate-x-1/2 z-40">
@@ -48,10 +49,10 @@ const Header = () => {
         }`}
       >
         <div className={`flex flex-col items-center justify-center h-screen gap-8 text-fluid-lg font-headings transition-all duration-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <a href="/" onClick={() => setIsMenuOpen(false)} className="transition-all duration-300 hover:text-blue hover:translate-x-2">Home</a>
-          <a href="/booking" onClick={() => setIsMenuOpen(false)} className="transition-all duration-300 hover:text-blue hover:translate-x-2">Booking</a>
-          <a href="/experience" onClick={() => setIsMenuOpen(false)} className="transition-all duration-300 hover:text-blue hover:translate-x-2">Experience</a>
-          <a href="/terms" onClick={() => setIsMenuOpen(false)} className="transition-all duration-300 hover:text-blue hover:translate-x-2">Terms & Conditions</a>
+          <Link to="/" onClick={() => setIsMenuOpen(false)} className="transition-all duration-300 hover:text-blue hover:translate-x-2">Home</Link>
+          <Link to="/booking" onClick={() => setIsMenuOpen(false)} className="transition-all duration-300 hover:text-blue hover:translate-x-2">Booking</Link>
+          <Link to="/experience" onClick={() => setIsMenuOpen(false)} className="transition-all duration-300 hover:text-blue hover:translate-x-2">Experience</Link>
+          <Link to="/terms" onClick={() => setIsMenuOpen(false)} className="transition-all duration-300 hover:text-blue hover:translate-x-2">Terms & Conditions</Link>
         </div>
       </div>
     </>

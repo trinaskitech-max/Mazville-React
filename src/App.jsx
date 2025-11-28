@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TextMedia from './components/TextMedia';
@@ -119,8 +120,20 @@ function Home() {
 }
 
 function App() {
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+    
+    // Scroll to top on every route change
+    useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, [pathname]);
+    
+    return null;
+  }
+
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/terms" element={<TermsConditions />} />

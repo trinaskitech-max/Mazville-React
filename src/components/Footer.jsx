@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="text-white content-info bg-navy-dark transition-all duration-500">
       <h2 className="w-full py-16 text-center">
-        <a className="block" href="/">
+        <Link className="block" to="/">
           <img 
             src="/images/Mazvilla_pics/mazvilla_logo.jpeg" 
             alt="Mazville Medhaya" 
             className="h-16 sm:h-20 w-auto mx-auto object-contain transition-all duration-500 hover:scale-105"
           />
           <span className="sr-only">Mazville Medhaya - Home</span>
-        </a>
+        </Link>
       </h2>
       
       <div className="flex flex-col gap-16 pb-16 mx-auto px-fluid-sm md:flex-row max-w-7xl">
@@ -38,12 +40,12 @@ const Footer = () => {
             <a href="https://maps.app.goo.gl/YzavfZ18H8VVZ8eR6" className="block" target="_blank" rel="noopener noreferrer">
               <span className="font-mono transition-colors duration-500 hover:text-blue">Get Directions</span>
             </a>
-            <a href="/booking" className="block">
+            <Link to="/booking" className="block">
               <span className="font-mono transition-colors duration-500 hover:text-blue">Make a Reservation</span>
-            </a>
-            <a href="/experience" className="block">
+            </Link>
+            <Link to="/experience" className="block">
               <span className="font-mono transition-colors duration-500 hover:text-blue">Our Experience</span>
-            </a>
+            </Link>
           </p>
         </div>
 
@@ -98,10 +100,10 @@ const Footer = () => {
           <div className="flex flex-wrap items-center justify-center font-mono text-xs gap-x-4 gap-y-8 sm:justify-end sm:flex-row text-blue">
             <nav className="w-full sm:order-0">
               <ul className="flex flex-wrap justify-center sm:justify-end gap-6 items-center">
-                <li><a href="/">Home</a></li>
-                <li><a href="/booking">Booking</a></li>
-                <li><a href="/experience">Experience</a></li>
-                <li><a href="/terms">Terms & Conditions</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/booking">Booking</Link></li>
+                <li><Link to="/experience">Experience</Link></li>
+                <li><Link to="/terms">Terms & Conditions</Link></li>
               </ul>
             </nav>
             <p className="sm:order-3">Crafted with ❤️ in Karnataka</p>
