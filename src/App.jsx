@@ -1,10 +1,12 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TextMedia from './components/TextMedia';
 import Carousel from './components/Carousel';
 import Footer from './components/Footer';
+import TermsConditions from './components/TermsConditions';
 
-function App() {
+function Home() {
   // Mazville Medhaya property features carousel
   const carouselSlides = [
     {
@@ -113,6 +115,17 @@ function App() {
 
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/terms" element={<TermsConditions />} />
+      </Routes>
+    </Router>
   );
 }
 
