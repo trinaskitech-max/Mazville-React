@@ -13,71 +13,68 @@ const Header = () => {
             : "bg-white/95 border-navy-dark/0"
         }`}
       >
-        <div className="flex items-center justify-between px-fluid-sm py-4 lg:py-6">
-          {/* Logo */}
-          <Link
-            to="/"
-            className="logo z-50 transition-transform duration-500 ease-out hover:scale-105"
-          >
-            <img
-              src="/images/Mazvilla_pics/mazvilla_logo.jpeg"
-              alt="Mazville Medhaya Logo"
-              className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-all duration-500"
-            />
-          </Link>
-
-          {/* Center Text */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 z-40">
-            <h1
-              className={`font-headings text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider transition-all duration-500 ${
-                isMenuOpen ? "text-white" : "text-navy-dark"
-              }`}
-            >
-              <span className="relative inline-block">
-                <span className="relative z-10">Mazville Medhaya</span>
-                <span className="absolute bottom-0 left-0 w-full h-2 bg-blue/20 -z-10"></span>
-              </span>
-            </h1>
-          </div>
-
-          {/* Desktop navigation (visible on md+) */}
-          <nav className="hidden md:flex items-center gap-8">
+        <div className="flex items-center justify-between px-6 lg:px-12 py-4 lg:py-5 max-w-screen-2xl mx-auto w-full">
+          {/* Left - Logo and Brand Name */}
+          <div className="flex items-center gap-3 z-50">
             <Link
               to="/"
-              className="uppercase text-sm tracking-wide hover:text-blue"
+              className="transition-transform duration-500 ease-out hover:scale-105"
+            >
+              <img
+                src="/images/Mazvilla_pics/mazvilla_logo.jpeg"
+                alt="Mazville Medhaya Logo"
+                className="h-12 md:h-14 lg:h-16 w-auto object-contain transition-all duration-500"
+              />
+            </Link>
+            <div className="flex flex-col items-start -space-y-1">
+              <h1
+                className={`font-headings text-xl md:text-2xl lg:text-3xl font-bold tracking-[0.15em] uppercase transition-all duration-500 leading-none ${
+                  isMenuOpen ? "text-white" : "text-navy-dark"
+                }`}
+              >
+                Mazville
+              </h1>
+              <p
+                className={`font-headings text-xs md:text-sm lg:text-base font-light tracking-[0.3em] uppercase transition-all duration-500 ${
+                  isMenuOpen ? "text-white/80" : "text-navy-dark/70"
+                }`}
+              >
+                Medhaya
+              </p>
+            </div>
+          </div>
+          {/* Right Navigation - Desktop Only */}
+          <nav className="hidden md:flex items-center gap-8 lg:gap-10 z-50">
+            <Link
+              to="/"
+              className="uppercase text-sm font-semibold tracking-widest text-navy-dark hover:text-blue transition-colors duration-300"
             >
               Home
             </Link>
             <Link
               to="/experience"
-              className="uppercase text-sm tracking-wide hover:text-blue"
+              className="uppercase text-sm font-semibold tracking-widest text-navy-dark hover:text-blue transition-colors duration-300"
             >
               Experience
             </Link>
             <Link
               to="/booking"
-              className="uppercase text-sm tracking-wide hover:text-blue"
+              className="uppercase text-sm font-semibold tracking-widest text-navy-dark hover:text-blue transition-colors duration-300"
             >
               Booking
             </Link>
             <Link
-              to="/terms"
-              className="uppercase text-sm tracking-wide hover:text-blue"
-            >
-              Terms
-            </Link>
-            <Link
               to="/booking"
-              className="ml-4 inline-flex items-center gap-2 px-4 py-2 bg-blue text-white rounded"
+              className="px-6 py-2.5 bg-navy-dark text-white rounded-sm uppercase text-sm font-bold tracking-widest hover:bg-blue transition-all duration-300 flex items-center gap-2"
             >
               Book Now
+              <span className="text-xs">▲</span>
             </Link>
-          </nav>
-
-          {/* Mobile Menu Toggle */}
+          </nav>{" "}
+          {/* Mobile Menu Toggle - Only visible on small screens */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`flex flex-col gap-1 w-7 h-6 z-50 transition-transform duration-300 hover:scale-110 ${
+            className={`md:hidden flex flex-col gap-1 w-7 h-6 z-50 transition-transform duration-300 hover:scale-110 ${
               isMenuOpen ? "js-menu__toggle--open" : ""
             }`}
             aria-label="Toggle menu"
